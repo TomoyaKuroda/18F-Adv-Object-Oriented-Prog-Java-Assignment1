@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TableOfContactsController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="121.0" layoutY="33.0" prefHeight="400.0" prefWidth="600.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Contacts">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="idColumn" prefWidth="52.800048828125" text="ID" />
+                <TableColumn fx:id="firstNameColumn" prefWidth="97.5999755859375" text="First Name" />
+                  <TableColumn fx:id="lastNameColumn" prefWidth="96.79998779296875" text="Last Name" />
+                  <TableColumn fx:id="addressColumn" prefWidth="172.79998779296875" text="Address" />
+                  <TableColumn fx:id="phoneColumn" prefWidth="127.20001220703125" text="Phone" />
+              </columns>
+            </TableView>
+            <Button mnemonicParsing="false" onAction="#changeToRegisterButtonPushed" text="create new contact" />
+            <Label fx:id="messageLabel" textFill="RED">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
