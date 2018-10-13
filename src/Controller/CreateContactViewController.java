@@ -59,9 +59,14 @@ public class CreateContactViewController implements Initializable {
      */
     @FXML
     public void createContactButtonPushed(ActionEvent actionEvent) throws IOException, InterruptedException {
+        //set default text and color of border
         warningMessage.setText("");
+        firstNameTextField.styleProperty().set("-fx-border-color: none;");
+        lastNameTextField.styleProperty().set("-fx-border-color: none;");
+        birthdayDatePicker.styleProperty().set("-fx-border-color: none;");
+        addressTextField.styleProperty().set("-fx-border-color: none;");
+        phoneTextField.styleProperty().set("-fx-border-color: none;");
         if(testFieldsForInputs()) {
-            //warningMessage.setText("Success");
             try {
                 Contact newContact = new Contact(firstNameTextField.getText(),
                         lastNameTextField.getText(),
@@ -87,15 +92,15 @@ public class CreateContactViewController implements Initializable {
         warningMessage.setText("");
         if (firstNameTextField.getText().isEmpty())
         {
+            firstNameTextField.styleProperty().set("-fx-border-color: red;");
             String msg = warningMessage.getText();
             warningMessage.setText(msg + "First name cannot be empty\n");
-            firstNameTextField.styleProperty().set("-fx-border-color: red;");
         }
         if (lastNameTextField.getText().isEmpty())
         {
+            lastNameTextField.styleProperty().set("-fx-border-color: red;");
             String msg = warningMessage.getText();
             warningMessage.setText(msg + "Last name cannot be empty\n");
-            lastNameTextField.styleProperty().set("-fx-border-color: red;");
         }
         try{
             LocalDate date =birthdayDatePicker.getValue();
@@ -104,21 +109,21 @@ public class CreateContactViewController implements Initializable {
         }
         catch (Exception e)
         {
+            birthdayDatePicker.styleProperty().set("-fx-border-color: red;");
             String msg = warningMessage.getText();
             warningMessage.setText(msg+"Please enter date using calendar\n");
-            birthdayDatePicker.styleProperty().set("-fx-border-color: red;");
         }
         if (addressTextField.getText().isEmpty())
         {
+            addressTextField.styleProperty().set("-fx-border-color: red;");
             String msg = warningMessage.getText();
             warningMessage.setText(msg + "Address cannot be empty\n");
-            addressTextField.styleProperty().set("-fx-border-color: red;");
         }
         if (phoneTextField.getText().isEmpty())
         {
+            phoneTextField.styleProperty().set("-fx-border-color: red;");
             String msg = warningMessage.getText();
             warningMessage.setText(msg + "Phone cannot be empty\n");
-            phoneTextField.styleProperty().set("-fx-border-color: red;");
         }
 
         return warningMessage.getText().isEmpty();
