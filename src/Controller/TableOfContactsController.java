@@ -45,7 +45,7 @@ public class TableOfContactsController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // confgure the table columns
+        // configure the table columns
         idColumn.setCellValueFactory(new PropertyValueFactory<Contact, Integer>("id"));
         firstNameColumn.setCellValueFactory(new PropertyValueFactory<Contact, String>("firstName"));
         lastNameColumn.setCellValueFactory(new PropertyValueFactory<Contact, String>("lastName"));
@@ -65,7 +65,6 @@ public class TableOfContactsController implements Initializable {
      */
     @FXML
     public void changeToRegisterButtonPushed(ActionEvent actionEvent) throws IOException {
-        //SceneChanger sc = new SceneChanger();
         SceneChanger.changeScenes(actionEvent, "../Views/CreateContactView.fxml","Register");
     }
 }

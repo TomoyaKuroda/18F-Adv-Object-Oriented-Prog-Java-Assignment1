@@ -144,8 +144,6 @@ public class CreateContactViewController implements Initializable {
 
         //filter for .jpg and .png
         FileChooser.ExtensionFilter jpgFilter = new FileChooser.ExtensionFilter("Image File (*.jpg, *.png)", "*.jpg", "*.png");
-//        FileChooser.ExtensionFilter pngFilter = new FileChooser.ExtensionFilter("Image File (*.png)", "*.png");
-//        fileChooser.getExtensionFilters().addAll(jpgFilter, pngFilter);
         fileChooser.getExtensionFilters().add(jpgFilter);
 
         //Set to the user's picture directory or user directory if not available
@@ -168,8 +166,6 @@ public class CreateContactViewController implements Initializable {
             {
                 try
                 {
-//                    BufferedImage bufferedImage = ImageIO.read(imageFile);
-//                    Image img = SwingFXUtils.toFXImage(bufferedImage, null);
                     Image image = new Image(imageFile.toURI().toString());
                     imageView.setImage(image);
                 }
@@ -181,11 +177,4 @@ public class CreateContactViewController implements Initializable {
         }
 
     }
-
-//    @FXML
-//    public void changeToTableViewButtonPushed(ActionEvent actionEvent) throws IOException {
-//        //SceneChanger sc = new SceneChanger();
-//        SceneChanger.changeScenes(actionEvent, "../Views/TableOfContacts.fxml","Table");
-//    }
-
 }

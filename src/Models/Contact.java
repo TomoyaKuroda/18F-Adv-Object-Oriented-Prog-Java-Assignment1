@@ -143,104 +143,22 @@ public class Contact {
             throw new IllegalArgumentException("Birthday's cannot be in the future");
     }
 
-
-
-/*
-    public String getMake() {
-        return make;
-    }
-
-    public void setMake(String make) {
-        ArrayList<String> validMakes = null;
-
-        try
-        {
-            //get valid mobile phone manufacturers from database
-            validMakes = DBConnect.getPhoneManufacturers();
-            if (validMakes.contains(make))
-                this.make = make;
-            else
-                throw new IllegalArgumentException("Valid manufacturers are: " + validMakes.toString());
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        if (!model.isEmpty() && model.length() <= 30)
-            this.model = model;
-        else
-            throw new IllegalArgumentException("model name cannot be empty and" +
-                    "must be less than 30 characters");
-    }
-
-    public String getOs() {
-        return os;
-    }
-
-    public void setOs(String os) {
-        this.os = os;
-    }
-
-    public double getScreenSize() {
-        return screenSize;
-    }
-
-    public void setScreenSize(double screenSize) {
-        this.screenSize = screenSize;
-    }
-
-    public double getMemory() {
-        return memory;
-    }
-
-    public void setMemory(double memory) {
-        this.memory = memory;
-    }
-
-    public double getFrontCamRes() {
-        return frontCamRes;
-    }
-
-    public void setFrontCamRes(double frontCamRes) {
-        this.frontCamRes = frontCamRes;
-    }
-
-    public double getRearCamRes() {
-        return rearCamRes;
-    }
-
-    public void setRearCamRes(double rearCamRes) {
-        this.rearCamRes = rearCamRes;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-*/
+    /**
+     * get image
+     * @return
+     */
     public File getImage() {
         return image;
     }
 
+    /**
+     * set image
+     * @param image
+     */
     public void setImage(File image) {
         this.image = image;
     }
-/*
-    public String toString()
-    {
-        return String.format("%s %s with %.0f gigs of memory", this.make,
-                this.model, this.memory);
-    }
-*/
+
     /**
      * This method will copy the file specified to the images directory on this server and give it
      * a unique name
