@@ -3,6 +3,7 @@ package Models;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.io.File;
 import java.sql.*;
 
 public class DBConnect {
@@ -43,6 +44,7 @@ public class DBConnect {
                         resultSet.getString("phone")
                         );
                 newContact.setId(resultSet.getInt("contactID"));
+                newContact.setImage(new File(resultSet.getString("imageFile")));
                 contacts.add(newContact);
             }
         } catch (Exception e)
@@ -76,8 +78,8 @@ public class DBConnect {
                     user, password);
 
             //2. create a sql statement
-            String sql = "INSERT INTO contacts (first_name, last_name, birthday, address, phone) " +
-                    "VALUES (?,?,?,?,?);";
+            String sql = "INSERT INTO contacts (first_name, last_name, birthday, address, phone, imageFile) " +
+                    "VALUES (?,?,?,?,?,?);";
 
             //3. create the PreparedStatement
             ps = conn.prepareStatement(sql);
@@ -90,7 +92,8 @@ public class DBConnect {
             ps.setDate(3, date);
             ps.setString(4, newContact.getAddress());
             ps.setString(5, newContact.getPhone());
-
+            ps.setString(6, newContact.getImage().toString());
+            //ps.setString(6, "test");
 
             //5. execute the INSERT statement
             ps.executeUpdate();

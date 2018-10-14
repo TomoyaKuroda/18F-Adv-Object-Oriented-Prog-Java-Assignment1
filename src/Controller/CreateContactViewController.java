@@ -73,7 +73,7 @@ public class CreateContactViewController implements Initializable {
                         birthdayDatePicker.getValue(),
                         addressTextField.getText(),
                         phoneTextField.getText());
-                System.out.printf("The new phone is %s%n", newContact);
+                System.out.printf("The new contact is %s%n", newContact);
                 //insert newContact to database
                 DBConnect.insertContactIntoDB(newContact);
                 //change scene to table

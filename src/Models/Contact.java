@@ -24,12 +24,14 @@ public class Contact {
      * @param address
      * @param phone
      */
-    public Contact( String firstName, String lastName, LocalDate birthday,String address, String phone ) {
+    public Contact( String firstName, String lastName, LocalDate birthday,String address, String phone ) throws IOException {
         setFirstName(firstName);
         setLastName(lastName);
         setAddress(address);
         setPhone(phone);
         setBirthday(birthday);
+        setImage(new File("src/Images/image.png"));
+        copyImageFile();
     }
 
     /**
@@ -170,7 +172,7 @@ public class Contact {
 
         String uniqueFileName = getUniqueFileName(image.getName());
 
-        Path targetPath = Paths.get("./src/images/"+uniqueFileName);
+        Path targetPath = Paths.get("src/Images/"+uniqueFileName);
 
         //copy the file to the new directory
         Files.copy(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
@@ -220,7 +222,7 @@ public class Contact {
      */
     public boolean uniqueFileInDirectory(String fileName)
     {
-        File directory = new File("./src/images/");
+        File directory = new File("src/Images/");
 
         File[] dir_contents = directory.listFiles();
 

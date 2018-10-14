@@ -34,8 +34,7 @@ public class TableOfContactsController implements Initializable {
     @FXML
     private TableColumn<Contact, String> phoneColumn;
 
-    @FXML
-    private Label messageLabel;
+
 
 
     /**
